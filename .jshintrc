@@ -16,6 +16,7 @@
   "maxstatements": 300,
   "newcap": true,
   "noarg": true,
+  "loopfunc": true,
   "noempty": true,
   "nonew": true,
   "quotmark": true,

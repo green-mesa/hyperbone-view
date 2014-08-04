@@ -4,6 +4,8 @@
 
 ## Please note that this module is no longer being maintained. 
 
+## (Having said that I've just updated it to stop using the deprecated replaceWholeText() functionality deprecated in Firefox and soon everythign else.. )
+
 It has been replaced with [HalogenJS View](https://github.com/halogenjs/view).
 
 ## Installing
