@@ -1062,6 +1062,7 @@ function bindCommand(cmd, root, model, commandName){
       });
 
       el.on('change', function(e){
+
         var oldVal = properties.get(property);
         var newVal = el.val();
 
@@ -1091,12 +1092,16 @@ function bindCommand(cmd, root, model, commandName){
   root.addClass('bound-to-command');
   root.__isBound = true;
 
-  var submitButton = root.find('button[type="submit"]');
+  if (document.querySelector){
 
-  if (submitButton) {
-    cmd._submit = function (){
-      submitButton.els[0].click();
+    var submitButton = root.els[0].querySelector('button[hb-for-command="' + commandName +'"]');
+
+    if (submitButton) {
+      cmd._submit = function (){
+        submitButton.click();
+      }
     }
+
   }
 
 }
