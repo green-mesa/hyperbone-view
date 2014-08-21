@@ -1091,6 +1091,14 @@ function bindCommand(cmd, root, model, commandName){
   root.addClass('bound-to-command');
   root.__isBound = true;
 
+  var submitButton = root.find('button[type="submit"]');
+
+  if (submitButton) {
+    cmd._submit = function (){
+      submitButton.els[0].click();
+    }
+  }
+
 }
 /**
  * unbinds commands to forms form.
