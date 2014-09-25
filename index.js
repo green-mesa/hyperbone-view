@@ -1082,6 +1082,16 @@ function bindCommand(cmd, root, model, commandName){
       });
     }
 
+    var bindInstant;
+
+    if (bindInstant = el.attr('hb-keyup')){
+      el.on('keyup', function (e){
+        if (e.which !== 13){
+          model.set(bindInstant, el.val());
+        }
+      });
+    }
+
   });
 
   root.on('submit', function(e){
@@ -1099,7 +1109,7 @@ function bindCommand(cmd, root, model, commandName){
     if (submitButton) {
       cmd._submit = function (){
         submitButton.click();
-      }
+      };
     }
 
   }
